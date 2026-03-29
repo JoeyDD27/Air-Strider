@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://ch4_vacuum_area"]
+
+[ext_resource type="Script" path="res://scripts/hazards/vacuum_area.gd" id="1_vacuum_area"]
+
+[node name="VacuumArea" type="Area2D"]
+collision_layer = 32
+collision_mask = 1
+script = ExtResource("1_vacuum_area")
+radius = 200.0
+duration = 1.5
+pull_strength = 400.0
+final_explosion_radius = 180.0
+final_explosion_damage = 3

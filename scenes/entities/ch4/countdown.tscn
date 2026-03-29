@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch4_countdown"]
+
+[ext_resource type="Script" path="res://scripts/enemies/ch4/countdown.gd" id="1_countdown"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_countdown"]
+size = Vector2(25, 45)
+
+[node name="Countdown" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 18
+script = ExtResource("1_countdown")
+max_health = 2
+damage = 3
+reward = 30
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -22)
+shape = SubResource("RectangleShape2D_countdown")

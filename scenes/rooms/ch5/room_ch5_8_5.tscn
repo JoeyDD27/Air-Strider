@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://ch5_room8_5_preboss"]
+
+[ext_resource type="Script" path="res://scripts/world/room_base.gd" id="1_base"]
+[ext_resource type="PackedScene" uid="uid://dq9012platform" path="res://scenes/entities/platform.tscn" id="2_platform"]
+[ext_resource type="PackedScene" uid="uid://eq3456door" path="res://scenes/entities/door.tscn" id="3_door"]
+[ext_resource type="PackedScene" uid="uid://rq5678fab" path="res://scenes/entities/fabricator.tscn" id="4_fab"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_shop"]
+font_size = 22
+font_color = Color(1.0, 0.4, 0.3, 1)
+
+[node name="Room_Ch5_8_5" type="Node2D"]
+script = ExtResource("1_base")
+room_id = 4085
+room_name = "Final Preparations"
+has_floor_hazard = false
+floor_y = 900.0
+room_width = 1920.0
+room_height = 1000.0
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(150, 750)
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 2020.0
+offset_bottom = 1100.0
+color = Color(0.1, 0.05, 0.08, 1)
+
+[node name="Floor" parent="." instance=ExtResource("2_platform")]
+position = Vector2(960, 850)
+platform_type = "stable"
+width = 1800.0
+height = 50.0
+
+[node name="Fabricator" parent="." instance=ExtResource("4_fab")]
+position = Vector2(960, 770)
+
+[node name="Door" parent="." instance=ExtResource("3_door")]
+position = Vector2(1800, 750)
+next_room_id = 409
+requires_clear = false
+
+[node name="ShopLabel" type="Label" parent="."]
+offset_left = 400.0
+offset_top = 150.0
+offset_right = 1520.0
+offset_bottom = 400.0
+text = "FINAL PREPARATIONS
+
+The Orbital Aegis awaits.
+
+BOSS TIPS:
+- Destroy the orbiting Aegis Bits to expose the core
+- Watch for the Solar Sweep laser attack
+- In Phase 2, kill Buffer Drones first!
+- Ion Rain has 1-second warning markers
+
+Approach the terminal and press SPACE to shop."
+label_settings = SubResource("LabelSettings_shop")

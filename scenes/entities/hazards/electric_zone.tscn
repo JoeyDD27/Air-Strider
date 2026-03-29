@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dch2_electric_zone"]
+
+[ext_resource type="Script" path="res://scripts/hazards/electric_zone.gd" id="1_script"]
+
+[node name="ElectricZone" type="Area2D"]
+collision_layer = 32
+collision_mask = 1
+script = ExtResource("1_script")

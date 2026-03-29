@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://aviator_gyro_module"]
+
+[ext_resource type="Script" path="res://scripts/modules/aviator_gyro.gd" id="1_gyro"]
+
+[node name="AviatorGyro" type="Node2D"]
+script = ExtResource("1_gyro")
+module_name = "Aviator Gyro"
+module_description = "20% reduced gravity when aiming mid-air"
+module_color = Color(0.4, 0.8, 1, 1)

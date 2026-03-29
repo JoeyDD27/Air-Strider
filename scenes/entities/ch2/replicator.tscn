@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dch2_replicator"]
+
+[ext_resource type="Script" path="res://scripts/enemies/ch2/replicator.gd" id="1_script"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(45, 45)
+
+[node name="Replicator" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 18
+script = ExtResource("1_script")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1")

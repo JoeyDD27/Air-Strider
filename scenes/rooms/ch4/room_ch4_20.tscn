@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://ch4_room20"]
+
+[ext_resource type="Script" path="res://scripts/world/room_base.gd" id="1_base"]
+[ext_resource type="PackedScene" uid="uid://dq9012platform" path="res://scenes/entities/platform.tscn" id="2_platform"]
+[ext_resource type="PackedScene" uid="uid://eq3456door" path="res://scenes/entities/door.tscn" id="3_door"]
+[ext_resource type="PackedScene" uid="uid://ch4_tether_anchor" path="res://scenes/entities/ch4/tether_anchor.tscn" id="4_tether"]
+[ext_resource type="PackedScene" uid="uid://ch4_reactor_beam" path="res://scenes/entities/ch4/reactor_beam.tscn" id="5_reactor"]
+[ext_resource type="PackedScene" uid="uid://ch4_mag_mine" path="res://scenes/entities/ch4/mag_mine.tscn" id="6_magmine"]
+
+[node name="RoomCh4_20" type="Node2D"]
+script = ExtResource("1_base")
+room_id = 320
+room_name = "The Trap Exam"
+has_floor_hazard = true
+floor_y = 900.0
+room_width = 2200.0
+room_height = 1000.0
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(150, 700)
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 2300.0
+offset_bottom = 1100.0
+color = Color(0.1, 0.05, 0.02, 1)
+
+[node name="Platform1" parent="." instance=ExtResource("2_platform")]
+position = Vector2(400, 800)
+platform_type = "stable"
+width = 500.0
+height = 30.0
+
+[node name="Platform2" parent="." instance=ExtResource("2_platform")]
+position = Vector2(1100, 600)
+platform_type = "stable"
+width = 400.0
+height = 30.0
+
+[node name="Platform3" parent="." instance=ExtResource("2_platform")]
+position = Vector2(1800, 800)
+platform_type = "stable"
+width = 500.0
+height = 30.0
+
+[node name="TetherAnchor1" parent="." instance=ExtResource("4_tether")]
+position = Vector2(1100, 550)
+
+[node name="ReactorBeam1" parent="." instance=ExtResource("5_reactor")]
+position = Vector2(1800, 750)
+
+[node name="MagMine1" parent="." instance=ExtResource("6_magmine")]
+position = Vector2(800, 400)
+
+[node name="MagMine2" parent="." instance=ExtResource("6_magmine")]
+position = Vector2(1400, 400)
+
+[node name="Door" parent="." instance=ExtResource("3_door")]
+position = Vector2(2050, 700)
+next_room_id = 3205
+requires_clear = true

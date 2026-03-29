@@ -1,0 +1,46 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/zone_blade/frame_00.png" id="frame_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/zone_blade/frame_01.png" id="frame_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/zone_blade/frame_02.png" id="frame_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/zone_blade/frame_03.png" id="frame_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/zone_blade/frame_04.png" id="frame_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/zone_blade/frame_05.png" id="frame_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/zone_blade/frame_06.png" id="frame_6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/zone_blade/frame_07.png" id="frame_7"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/zone_blade/frame_08.png" id="frame_8"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("frame_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("frame_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("frame_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("frame_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("frame_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("frame_5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("frame_6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("frame_7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("frame_8")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.0
+}]

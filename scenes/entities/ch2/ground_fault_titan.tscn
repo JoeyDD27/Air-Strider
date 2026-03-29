@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dch2_ground_fault_titan"]
+
+[ext_resource type="Script" path="res://scripts/enemies/ch2/ground_fault_titan.gd" id="1_script"]
+
+[node name="GroundFaultTitan" type="Node2D"]
+script = ExtResource("1_script")

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://iq9012mantis"]
+
+[ext_resource type="Script" path="res://scripts/enemies/mantis.gd" id="1_mantis"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mantis"]
+size = Vector2(35, 45)
+
+[node name="Mantis" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 18
+script = ExtResource("1_mantis")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_mantis")

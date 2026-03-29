@@ -1,0 +1,79 @@
+[gd_scene load_steps=7 format=3 uid="uid://ch4_room2"]
+
+[ext_resource type="Script" path="res://scripts/world/room_base.gd" id="1_base"]
+[ext_resource type="PackedScene" uid="uid://dq9012platform" path="res://scenes/entities/platform.tscn" id="2_platform"]
+[ext_resource type="PackedScene" uid="uid://eq3456door" path="res://scenes/entities/door.tscn" id="3_door"]
+[ext_resource type="PackedScene" uid="uid://ch4_countdown" path="res://scenes/entities/ch4/countdown.tscn" id="4_countdown"]
+[ext_resource type="PackedScene" uid="uid://ch4_mag_mine" path="res://scenes/entities/ch4/mag_mine.tscn" id="5_magmine"]
+[ext_resource type="PackedScene" uid="uid://ch4_sludge_mortar" path="res://scenes/entities/ch4/sludge_mortar.tscn" id="6_sludgemortar"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hint"]
+font_size = 18
+font_color = Color(0.8, 0.6, 0.6, 1)
+
+[node name="RoomCh4_2" type="Node2D"]
+script = ExtResource("1_base")
+room_id = 302
+room_name = "Toxic Swarm"
+has_floor_hazard = true
+floor_y = 900.0
+room_width = 1920.0
+room_height = 1000.0
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(150, 700)
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 2020.0
+offset_bottom = 1100.0
+color = Color(0.1, 0.05, 0.02, 1)
+
+[node name="Platform1" parent="." instance=ExtResource("2_platform")]
+position = Vector2(400, 800)
+platform_type = "stable"
+width = 500.0
+height = 30.0
+
+[node name="Platform2" parent="." instance=ExtResource("2_platform")]
+position = Vector2(1000, 600)
+platform_type = "stable"
+width = 400.0
+height = 30.0
+
+[node name="Platform3" parent="." instance=ExtResource("2_platform")]
+position = Vector2(1550, 800)
+platform_type = "stable"
+width = 500.0
+height = 30.0
+
+[node name="Countdown1" parent="." instance=ExtResource("4_countdown")]
+position = Vector2(600, 750)
+
+[node name="Countdown2" parent="." instance=ExtResource("4_countdown")]
+position = Vector2(1400, 750)
+
+[node name="MagMine1" parent="." instance=ExtResource("5_magmine")]
+position = Vector2(800, 400)
+
+[node name="MagMine2" parent="." instance=ExtResource("5_magmine")]
+position = Vector2(1200, 400)
+
+[node name="SludgeMortar1" parent="." instance=ExtResource("6_sludgemortar")]
+position = Vector2(1000, 550)
+
+[node name="Hint" type="Label" parent="."]
+offset_left = 100.0
+offset_top = 600.0
+offset_right = 700.0
+offset_bottom = 700.0
+text = "MAG-MINES phase through walls!
+COUNTDOWN enemies chase and explode.
+Keep moving to stay alive."
+label_settings = SubResource("LabelSettings_hint")
+
+[node name="Door" parent="." instance=ExtResource("3_door")]
+position = Vector2(1700, 700)
+next_room_id = 303
+requires_clear = true

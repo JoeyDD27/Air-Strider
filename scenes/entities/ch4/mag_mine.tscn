@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch4_mag_mine"]
+
+[ext_resource type="Script" path="res://scripts/enemies/ch4/mag_mine.gd" id="1_mag_mine"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mine"]
+radius = 18.0
+
+[node name="MagMine" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 17
+script = ExtResource("1_mag_mine")
+max_health = 1
+damage = 1
+reward = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mine")

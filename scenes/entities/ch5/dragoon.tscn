@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdo7xr4g8p2ty"]
+
+[ext_resource type="Script" path="res://scripts/enemies/ch5/dragoon.gd" id="1_dragoon"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dragoon"]
+size = Vector2(40, 20)
+
+[node name="Dragoon" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 16
+script = ExtResource("1_dragoon")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dragoon")

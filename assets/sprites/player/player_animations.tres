@@ -1,0 +1,287 @@
+[gd_resource type="SpriteFrames" load_steps=47 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/player/idle/frame_00.png" id="idle_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/idle/frame_01.png" id="idle_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/idle/frame_02.png" id="idle_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/idle/frame_03.png" id="idle_3"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/player/run/frame_00.png" id="run_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/run/frame_01.png" id="run_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/run/frame_02.png" id="run_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/run/frame_03.png" id="run_3"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/player/airborne/frame_00.png" id="air_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/airborne/frame_01.png" id="air_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/airborne/frame_02.png" id="air_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/airborne/frame_03.png" id="air_3"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/player/firing/frame_00.png" id="fire_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/firing/frame_01.png" id="fire_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/firing/frame_02.png" id="fire_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/firing/frame_03.png" id="fire_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/firing/frame_04.png" id="fire_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/firing/frame_05.png" id="fire_5"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/player/grapple/frame_00.png" id="grapple_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/grapple/frame_01.png" id="grapple_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/grapple/frame_02.png" id="grapple_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/grapple/frame_03.png" id="grapple_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/grapple/frame_04.png" id="grapple_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/grapple/frame_05.png" id="grapple_5"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/player/grapple_up/frame_00.png" id="grapple_up_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/grapple_up/frame_01.png" id="grapple_up_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/grapple_up/frame_02.png" id="grapple_up_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/grapple_up/frame_03.png" id="grapple_up_3"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/player/grapple_up_left/frame_00.png" id="grapple_up_left_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/grapple_up_left/frame_01.png" id="grapple_up_left_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/grapple_up_left/frame_02.png" id="grapple_up_left_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/grapple_up_left/frame_03.png" id="grapple_up_left_3"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/player/death/frame_00.png" id="death_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/death/frame_01.png" id="death_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/death/frame_02.png" id="death_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/death/frame_03.png" id="death_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/death/frame_04.png" id="death_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/death/frame_05.png" id="death_5"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/player/ghost/frame_00.png" id="ghost_0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/ghost/frame_01.png" id="ghost_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/ghost/frame_02.png" id="ghost_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/ghost/frame_03.png" id="ghost_3"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/player/damage/frame_00.png" id="damage_0"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("idle_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("run_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("run_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("run_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("run_3")
+}],
+"loop": true,
+"name": &"run",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("air_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("air_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("air_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("air_3")
+}],
+"loop": true,
+"name": &"airborne",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("air_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("air_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("air_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("air_3")
+}],
+"loop": true,
+"name": &"airborne_right",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("air_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("air_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("air_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("air_3")
+}],
+"loop": true,
+"name": &"airborne_left",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("fire_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("fire_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("fire_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("fire_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("fire_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("fire_5")
+}],
+"loop": false,
+"name": &"firing",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("grapple_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("grapple_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("grapple_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("grapple_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("grapple_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("grapple_5")
+}],
+"loop": true,
+"name": &"grapple",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("grapple_up_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("grapple_up_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("grapple_up_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("grapple_up_3")
+}],
+"loop": true,
+"name": &"grapple_up_right",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("grapple_up_left_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("grapple_up_left_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("grapple_up_left_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("grapple_up_left_3")
+}],
+"loop": true,
+"name": &"grapple_up_left",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("idle_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_3")
+}],
+"loop": true,
+"name": &"grapple_down",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("death_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("death_5")
+}],
+"loop": false,
+"name": &"death",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("ghost_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ghost_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ghost_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("ghost_3")
+}],
+"loop": false,
+"name": &"ghost",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("damage_0")
+}],
+"loop": false,
+"name": &"damage",
+"speed": 1.0
+}]

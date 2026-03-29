@@ -1,0 +1,131 @@
+[gd_scene load_steps=8 format=3 uid="uid://ch5_room4_ambush"]
+
+[ext_resource type="Script" path="res://scripts/world/room_base.gd" id="1_base"]
+[ext_resource type="PackedScene" uid="uid://dq9012platform" path="res://scenes/entities/platform.tscn" id="2_platform"]
+[ext_resource type="PackedScene" uid="uid://eq3456door" path="res://scenes/entities/door.tscn" id="3_door"]
+[ext_resource type="PackedScene" uid="uid://cdo7xr4g8p2ty" path="res://scenes/entities/ch5/dragoon.tscn" id="4_dragoon"]
+[ext_resource type="PackedScene" uid="uid://bmedic_drone_ch5" path="res://scenes/entities/ch5/medic_drone.tscn" id="5_medic"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_grapple"]
+size = Vector2(30, 30)
+
+[sub_resource type="LabelSettings" id="LabelSettings_room"]
+font_size = 16
+font_color = Color(0.8, 0.8, 0.8, 0.7)
+
+[node name="Room_Ch5_4" type="Node2D"]
+script = ExtResource("1_base")
+room_id = 404
+room_name = "The Aerial Ambush"
+has_floor_hazard = true
+floor_y = 1200.0
+room_width = 1280.0
+room_height = 1400.0
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(150, 1100)
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 1400.0
+offset_bottom = 1500.0
+color = Color(0.12, 0.08, 0.15, 1)
+
+[node name="Platform1" parent="." instance=ExtResource("2_platform")]
+position = Vector2(150, 1150)
+platform_type = "stable"
+width = 200.0
+
+[node name="Platform2" parent="." instance=ExtResource("2_platform")]
+position = Vector2(400, 950)
+platform_type = "stable"
+width = 150.0
+
+[node name="Platform3" parent="." instance=ExtResource("2_platform")]
+position = Vector2(900, 950)
+platform_type = "stable"
+width = 150.0
+
+[node name="Platform4" parent="." instance=ExtResource("2_platform")]
+position = Vector2(200, 700)
+platform_type = "stable"
+width = 150.0
+
+[node name="Platform5" parent="." instance=ExtResource("2_platform")]
+position = Vector2(1050, 700)
+platform_type = "stable"
+width = 150.0
+
+[node name="Platform6" parent="." instance=ExtResource("2_platform")]
+position = Vector2(640, 500)
+platform_type = "stable"
+width = 200.0
+
+[node name="Platform7" parent="." instance=ExtResource("2_platform")]
+position = Vector2(300, 300)
+platform_type = "stable"
+width = 150.0
+
+[node name="Platform8" parent="." instance=ExtResource("2_platform")]
+position = Vector2(950, 300)
+platform_type = "stable"
+width = 150.0
+
+[node name="Platform9" parent="." instance=ExtResource("2_platform")]
+position = Vector2(640, 150)
+platform_type = "stable"
+width = 250.0
+
+[node name="GrapplePoint1" type="StaticBody2D" parent="."]
+position = Vector2(640, 800)
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrapplePoint1"]
+shape = SubResource("RectangleShape2D_grapple")
+
+[node name="GrapplePoint2" type="StaticBody2D" parent="."]
+position = Vector2(100, 550)
+collision_layer = 64
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="GrapplePoint2"]
+shape = SubResource("RectangleShape2D_grapple")
+
+[node name="GrapplePoint3" type="StaticBody2D" parent="."]
+position = Vector2(1150, 550)
+collision_layer = 64
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="GrapplePoint3"]
+shape = SubResource("RectangleShape2D_grapple")
+
+[node name="GrapplePoint4" type="StaticBody2D" parent="."]
+position = Vector2(640, 350)
+collision_layer = 64
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="GrapplePoint4"]
+shape = SubResource("RectangleShape2D_grapple")
+
+[node name="Dragoon1" parent="." instance=ExtResource("4_dragoon")]
+position = Vector2(300, 600)
+
+[node name="Dragoon2" parent="." instance=ExtResource("4_dragoon")]
+position = Vector2(950, 600)
+
+[node name="MedicDrone1" parent="." instance=ExtResource("5_medic")]
+position = Vector2(300, 400)
+
+[node name="MedicDrone2" parent="." instance=ExtResource("5_medic")]
+position = Vector2(950, 400)
+
+[node name="Door" parent="." instance=ExtResource("3_door")]
+position = Vector2(750, 100)
+next_room_id = 4055
+requires_clear = true
+
+[node name="RoomLabel" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 400.0
+offset_bottom = 80.0
+text = "The Aerial Ambush"
+label_settings = SubResource("LabelSettings_room")

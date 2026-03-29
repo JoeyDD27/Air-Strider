@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch4_reactor_beam"]
+
+[ext_resource type="Script" path="res://scripts/enemies/ch4/reactor_beam.gd" id="1_reactor_beam"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_reactor"]
+size = Vector2(30, 70)
+
+[node name="ReactorBeam" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 18
+script = ExtResource("1_reactor_beam")
+max_health = 2
+damage = 2
+reward = 55
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -35)
+shape = SubResource("RectangleShape2D_reactor")

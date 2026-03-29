@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://dch2_room5"]
+
+[ext_resource type="Script" path="res://scripts/world/ch2_room_base.gd" id="1_base"]
+[ext_resource type="PackedScene" uid="uid://dq9012platform" path="res://scenes/entities/platform.tscn" id="2_platform"]
+[ext_resource type="PackedScene" uid="uid://eq3456door" path="res://scenes/entities/door.tscn" id="3_door"]
+[ext_resource type="PackedScene" uid="uid://rq5678fab" path="res://scenes/entities/fabricator.tscn" id="4_fab"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_shop"]
+font_size = 22
+font_color = Color(0.3, 1, 0.8, 1)
+
+[node name="RoomCh2_5" type="Node2D"]
+script = ExtResource("1_base")
+room_id = 105
+room_name = "Mid-Chapter Shop"
+has_floor_hazard = false
+floor_y = 900.0
+room_width = 1920.0
+room_height = 1000.0
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(150, 800)
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 2020.0
+offset_bottom = 1100.0
+color = Color(0.05, 0.1, 0.08, 1)
+
+[node name="Floor" parent="." instance=ExtResource("2_platform")]
+position = Vector2(960, 850)
+platform_type = "stable"
+width = 1800.0
+height = 50.0
+
+[node name="Fabricator" parent="." instance=ExtResource("4_fab")]
+position = Vector2(960, 770)
+
+[node name="Door" parent="." instance=ExtResource("3_door")]
+position = Vector2(1800, 750)
+next_room_id = 106
+requires_clear = false
+
+[node name="ShopLabel" type="Label" parent="."]
+offset_left = 550.0
+offset_top = 180.0
+offset_right = 1370.0
+offset_bottom = 380.0
+text = "SAFE ZONE - Resupply
+
+The Gauntlet awaits...
+You will face the same enemy mix
+5 TIMES IN A ROW!
+
+Prepare yourself!"
+label_settings = SubResource("LabelSettings_shop")

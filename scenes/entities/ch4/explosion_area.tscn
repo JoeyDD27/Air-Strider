@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ch4_explosion_area"]
+
+[ext_resource type="Script" path="res://scripts/hazards/explosion_area.gd" id="1_explosion_area"]
+
+[node name="ExplosionArea" type="Area2D"]
+collision_layer = 32
+collision_mask = 1
+script = ExtResource("1_explosion_area")
+radius = 80.0
+damage = 1

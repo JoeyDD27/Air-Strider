@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch4_fuel_tank"]
+
+[ext_resource type="Script" path="res://scripts/enemies/ch4/fuel_tank.gd" id="1_fuel_tank"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tank"]
+size = Vector2(30, 45)
+
+[node name="FuelTank" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 18
+script = ExtResource("1_fuel_tank")
+max_health = 2
+damage = 1
+reward = 35
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -22)
+shape = SubResource("RectangleShape2D_tank")

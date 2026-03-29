@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ch4_subject_88"]
+
+[ext_resource type="Script" path="res://scripts/enemies/ch4/subject_88.gd" id="1_subject_88"]
+
+[node name="Subject88" type="Node2D"]
+script = ExtResource("1_subject_88")
+max_health = 30

@@ -1,0 +1,138 @@
+[gd_scene load_steps=7 format=3 uid="uid://room4scene"]
+
+[ext_resource type="Script" path="res://scripts/world/room_base.gd" id="1_base"]
+[ext_resource type="PackedScene" uid="uid://dq9012platform" path="res://scenes/entities/platform.tscn" id="2_platform"]
+[ext_resource type="PackedScene" uid="uid://eq3456door" path="res://scenes/entities/door.tscn" id="3_door"]
+[ext_resource type="PackedScene" uid="uid://fq7890sniper" path="res://scenes/entities/sniper.tscn" id="4_sniper"]
+[ext_resource type="PackedScene" uid="uid://iq9012mantis" path="res://scenes/entities/mantis.tscn" id="5_mantis"]
+[ext_resource type="PackedScene" uid="uid://gq1234mortar" path="res://scenes/entities/mortar.tscn" id="6_mortar"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_grapple"]
+size = Vector2(30, 30)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tutorial"]
+font_size = 18
+font_color = Color(1, 1, 1, 0.8)
+
+[node name="Room4" type="Node2D"]
+script = ExtResource("1_base")
+room_id = 4
+room_name = "Practice"
+has_floor_hazard = false
+floor_y = 900.0
+room_width = 1920.0
+room_height = 1000.0
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(100, 700)
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 2020.0
+offset_bottom = 1100.0
+color = Color(0.102, 0.102, 0.18, 1)
+
+[node name="Platform1" parent="." instance=ExtResource("2_platform")]
+position = Vector2(150, 600)
+platform_type = "stable"
+width = 150.0
+
+[node name="Platform2" parent="." instance=ExtResource("2_platform")]
+position = Vector2(400, 500)
+platform_type = "crumble"
+width = 100.0
+
+[node name="Platform3" parent="." instance=ExtResource("2_platform")]
+position = Vector2(650, 400)
+platform_type = "crumble"
+width = 110.0
+
+[node name="Platform4" parent="." instance=ExtResource("2_platform")]
+position = Vector2(950, 450)
+platform_type = "crumble"
+width = 100.0
+
+[node name="Platform5" parent="." instance=ExtResource("2_platform")]
+position = Vector2(1250, 350)
+platform_type = "crumble"
+width = 120.0
+
+[node name="Platform6" parent="." instance=ExtResource("2_platform")]
+position = Vector2(1500, 420)
+platform_type = "crumble"
+width = 100.0
+
+[node name="Platform7" parent="." instance=ExtResource("2_platform")]
+position = Vector2(1750, 300)
+platform_type = "stable"
+width = 150.0
+
+[node name="GrapplePoint1" type="StaticBody2D" parent="."]
+position = Vector2(280, 200)
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrapplePoint1"]
+shape = SubResource("RectangleShape2D_grapple")
+
+[node name="GrapplePoint2" type="StaticBody2D" parent="."]
+position = Vector2(520, 150)
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrapplePoint2"]
+shape = SubResource("RectangleShape2D_grapple")
+
+[node name="GrapplePoint3" type="StaticBody2D" parent="."]
+position = Vector2(800, 180)
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrapplePoint3"]
+shape = SubResource("RectangleShape2D_grapple")
+
+[node name="GrapplePoint4" type="StaticBody2D" parent="."]
+position = Vector2(1100, 140)
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrapplePoint4"]
+shape = SubResource("RectangleShape2D_grapple")
+
+[node name="GrapplePoint5" type="StaticBody2D" parent="."]
+position = Vector2(1350, 160)
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrapplePoint5"]
+shape = SubResource("RectangleShape2D_grapple")
+
+[node name="GrapplePoint6" type="StaticBody2D" parent="."]
+position = Vector2(1620, 120)
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrapplePoint6"]
+shape = SubResource("RectangleShape2D_grapple")
+
+[node name="Sniper1" parent="." instance=ExtResource("4_sniper")]
+position = Vector2(500, 870)
+
+[node name="Sniper2" parent="." instance=ExtResource("4_sniper")]
+position = Vector2(1200, 870)
+
+[node name="Mortar1" parent="." instance=ExtResource("6_mortar")]
+position = Vector2(900, 870)
+
+[node name="Mantis1" parent="." instance=ExtResource("5_mantis")]
+position = Vector2(600, 870)
+
+[node name="Mantis2" parent="." instance=ExtResource("5_mantis")]
+position = Vector2(1100, 870)
+
+[node name="Door" parent="." instance=ExtResource("3_door")]
+position = Vector2(1850, 250)
+next_room_id = 5
+
+[node name="TutorialLabel" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 450.0
+offset_bottom = 100.0
+text = "Room 4: Farm coins for the shop ahead!"
+label_settings = SubResource("LabelSettings_tutorial")

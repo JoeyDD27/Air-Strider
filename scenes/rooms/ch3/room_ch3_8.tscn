@@ -1,0 +1,104 @@
+[gd_scene load_steps=12 format=3 uid="uid://ch3_room8"]
+
+[ext_resource type="Script" path="res://scripts/world/room_base.gd" id="1_base"]
+[ext_resource type="PackedScene" uid="uid://dq9012platform" path="res://scenes/entities/platform.tscn" id="2_platform"]
+[ext_resource type="PackedScene" uid="uid://eq3456door" path="res://scenes/entities/door.tscn" id="3_door"]
+[ext_resource type="PackedScene" uid="uid://ch3_zone_blade" path="res://scenes/entities/ch3/zone_blade.tscn" id="4_zoneblade"]
+[ext_resource type="PackedScene" uid="uid://ch3_tri_gunner" path="res://scenes/entities/ch3/tri_gunner.tscn" id="5_trigunner"]
+[ext_resource type="PackedScene" uid="uid://ch3_harpoon_stalker" path="res://scenes/entities/ch3/harpoon_stalker.tscn" id="6_stalker"]
+[ext_resource type="PackedScene" uid="uid://bch2seeker" path="res://scenes/entities/ch2/seeker_beetle.tscn" id="7_beetle"]
+[ext_resource type="PackedScene" uid="uid://cch2arc" path="res://scenes/entities/ch2/arc_caster.tscn" id="8_arccaster"]
+[ext_resource type="PackedScene" uid="uid://dch2rep" path="res://scenes/entities/ch2/replicator.tscn" id="9_replicator"]
+[ext_resource type="PackedScene" uid="uid://ech2buffer" path="res://scenes/entities/ch2/buffer_drone.tscn" id="10_buffer"]
+[ext_resource type="PackedScene" uid="uid://fch2amp" path="res://scenes/entities/ch2/amp_pylon.tscn" id="11_amp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_title"]
+font_size = 24
+font_color = Color(1, 0.3, 0.3, 1)
+
+[node name="RoomCh3_8" type="Node2D"]
+script = ExtResource("1_base")
+room_id = 208
+room_name = "Split Paths Gauntlet"
+has_floor_hazard = true
+floor_y = 900.0
+room_width = 2200.0
+room_height = 1000.0
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(1100, 800)
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 2300.0
+offset_bottom = 1100.0
+color = Color(0.08, 0.05, 0.1, 1)
+
+[node name="FloorCenter" parent="." instance=ExtResource("2_platform")]
+position = Vector2(1100, 850)
+platform_type = "stable"
+width = 400.0
+height = 30.0
+
+[node name="FloorLeft" parent="." instance=ExtResource("2_platform")]
+position = Vector2(300, 600)
+platform_type = "stable"
+width = 400.0
+height = 30.0
+
+[node name="FloorRight" parent="." instance=ExtResource("2_platform")]
+position = Vector2(1900, 600)
+platform_type = "stable"
+width = 400.0
+height = 30.0
+
+[node name="UpperLeft" parent="." instance=ExtResource("2_platform")]
+position = Vector2(300, 300)
+platform_type = "stable"
+width = 350.0
+height = 30.0
+
+[node name="UpperRight" parent="." instance=ExtResource("2_platform")]
+position = Vector2(1900, 300)
+platform_type = "stable"
+width = 350.0
+height = 30.0
+
+[node name="BufferDrone" parent="." instance=ExtResource("10_buffer")]
+position = Vector2(200, 250)
+
+[node name="AmpPylon" parent="." instance=ExtResource("11_amp")]
+position = Vector2(400, 250)
+
+[node name="Replicator" parent="." instance=ExtResource("9_replicator")]
+position = Vector2(300, 550)
+
+[node name="ArcCaster" parent="." instance=ExtResource("8_arccaster")]
+position = Vector2(200, 550)
+
+[node name="ZoneBlade" parent="." instance=ExtResource("4_zoneblade")]
+position = Vector2(1800, 550)
+guard_post = Vector2(1800, 550)
+
+[node name="TriGunner" parent="." instance=ExtResource("5_trigunner")]
+position = Vector2(1900, 250)
+
+[node name="HarpoonStalker" parent="." instance=ExtResource("6_stalker")]
+position = Vector2(2000, 550)
+
+[node name="SeekerBeetle" parent="." instance=ExtResource("7_beetle")]
+position = Vector2(1900, 250)
+
+[node name="Door" parent="." instance=ExtResource("3_door")]
+position = Vector2(2050, 500)
+next_room_id = 209
+requires_clear = true
+
+[node name="Title" type="Label" parent="."]
+offset_left = 950.0
+offset_top = 100.0
+offset_right = 1250.0
+offset_bottom = 150.0
+text = "SPLIT PATHS"
+label_settings = SubResource("LabelSettings_title")

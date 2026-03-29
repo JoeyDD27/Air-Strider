@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://hyper_coil_module"]
+
+[ext_resource type="Script" path="res://scripts/modules/hyper_coil.gd" id="1_hyper"]
+
+[node name="HyperCoil" type="Node2D"]
+script = ExtResource("1_hyper")
+module_name = "Hyper-Coil"
+module_description = "30% faster weapon charge"
+module_color = Color(1, 0.2, 0.2, 1)

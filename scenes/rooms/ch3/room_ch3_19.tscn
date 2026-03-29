@@ -1,0 +1,107 @@
+[gd_scene load_steps=11 format=3 uid="uid://ch3_room19"]
+
+[ext_resource type="Script" path="res://scripts/world/room_base.gd" id="1_base"]
+[ext_resource type="PackedScene" uid="uid://dq9012platform" path="res://scenes/entities/platform.tscn" id="2_platform"]
+[ext_resource type="PackedScene" uid="uid://eq3456door" path="res://scenes/entities/door.tscn" id="3_door"]
+[ext_resource type="PackedScene" uid="uid://ch3_zone_blade" path="res://scenes/entities/ch3/zone_blade.tscn" id="4_zoneblade"]
+[ext_resource type="PackedScene" uid="uid://ch3_tri_gunner" path="res://scenes/entities/ch3/tri_gunner.tscn" id="5_trigunner"]
+[ext_resource type="PackedScene" uid="uid://ch3_harpoon_stalker" path="res://scenes/entities/ch3/harpoon_stalker.tscn" id="6_stalker"]
+[ext_resource type="PackedScene" uid="uid://ch3_aegis_bit" path="res://scenes/entities/ch3/aegis_bit.tscn" id="7_aegis"]
+[ext_resource type="PackedScene" uid="uid://ech2buffer" path="res://scenes/entities/ch2/buffer_drone.tscn" id="8_buffer"]
+[ext_resource type="PackedScene" uid="uid://fch2amp" path="res://scenes/entities/ch2/amp_pylon.tscn" id="9_amp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_title"]
+font_size = 24
+font_color = Color(1, 0.3, 0.3, 1)
+
+[node name="RoomCh3_19" type="Node2D"]
+script = ExtResource("1_base")
+room_id = 219
+room_name = "Support Nightmare"
+has_floor_hazard = true
+floor_y = 900.0
+room_width = 2200.0
+room_height = 1000.0
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(150, 750)
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 2300.0
+offset_bottom = 1100.0
+color = Color(0.12, 0.05, 0.08, 1)
+
+[node name="Floor" parent="." instance=ExtResource("2_platform")]
+position = Vector2(1100, 850)
+platform_type = "stable"
+width = 2000.0
+height = 30.0
+
+[node name="UpperLeft" parent="." instance=ExtResource("2_platform")]
+position = Vector2(400, 500)
+platform_type = "stable"
+width = 400.0
+height = 30.0
+
+[node name="UpperCenter" parent="." instance=ExtResource("2_platform")]
+position = Vector2(1100, 400)
+platform_type = "stable"
+width = 500.0
+height = 30.0
+
+[node name="UpperRight" parent="." instance=ExtResource("2_platform")]
+position = Vector2(1800, 500)
+platform_type = "stable"
+width = 400.0
+height = 30.0
+
+[node name="ZoneBlade" parent="." instance=ExtResource("4_zoneblade")]
+position = Vector2(600, 800)
+guard_post = Vector2(600, 800)
+
+[node name="TriGunner" parent="." instance=ExtResource("5_trigunner")]
+position = Vector2(1100, 350)
+
+[node name="HarpoonStalker" parent="." instance=ExtResource("6_stalker")]
+position = Vector2(1600, 800)
+
+[node name="BufferDrone" parent="." instance=ExtResource("8_buffer")]
+position = Vector2(400, 450)
+
+[node name="AegisBitB1" parent="." instance=ExtResource("7_aegis")]
+position = Vector2(340, 450)
+host_path = NodePath("../BufferDrone")
+orbit_radius = 60.0
+
+[node name="AegisBitB2" parent="." instance=ExtResource("7_aegis")]
+position = Vector2(460, 450)
+host_path = NodePath("../BufferDrone")
+orbit_radius = 60.0
+
+[node name="AmpPylon" parent="." instance=ExtResource("9_amp")]
+position = Vector2(1800, 450)
+
+[node name="AegisBitA1" parent="." instance=ExtResource("7_aegis")]
+position = Vector2(1740, 450)
+host_path = NodePath("../AmpPylon")
+orbit_radius = 60.0
+
+[node name="AegisBitA2" parent="." instance=ExtResource("7_aegis")]
+position = Vector2(1860, 450)
+host_path = NodePath("../AmpPylon")
+orbit_radius = 60.0
+
+[node name="Door" parent="." instance=ExtResource("3_door")]
+position = Vector2(2050, 750)
+next_room_id = 220
+requires_clear = true
+
+[node name="Title" type="Label" parent="."]
+offset_left = 950.0
+offset_top = 100.0
+offset_right = 1250.0
+offset_bottom = 150.0
+text = "SUPPORT NIGHTMARE"
+label_settings = SubResource("LabelSettings_title")

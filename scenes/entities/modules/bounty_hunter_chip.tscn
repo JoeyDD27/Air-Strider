@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bounty_hunter_chip_module"]
+
+[ext_resource type="Script" path="res://scripts/modules/bounty_hunter_chip.gd" id="1_bounty"]
+
+[node name="BountyHunterChip" type="Node2D"]
+script = ExtResource("1_bounty")
+module_name = "Bounty Hunter Chip"
+module_description = "50% chance for double coins"
+module_color = Color(1, 0.85, 0, 1)

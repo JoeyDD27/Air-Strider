@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://borbital_aegis_ch5"]
+
+[ext_resource type="Script" path="res://scripts/enemies/ch5/orbital_aegis.gd" id="1_orbital_aegis"]
+
+[node name="OrbitalAegis" type="Node2D"]
+script = ExtResource("1_orbital_aegis")

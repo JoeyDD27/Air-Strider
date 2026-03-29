@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://ch5_room9_boss"]
+
+[ext_resource type="Script" path="res://scripts/world/ch5_boss_room.gd" id="1_boss_room"]
+
+[node name="Room_Ch5_9" type="Node2D"]
+script = ExtResource("1_boss_room")
+room_id = 409
+room_name = "The Orbital Aegis"
+has_floor_hazard = true
+floor_y = 1100.0
+room_width = 1920.0
+room_height = 1200.0
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(960, 850)
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 2100.0
+offset_bottom = 1300.0
+color = Color(0.1, 0.06, 0.08, 1)

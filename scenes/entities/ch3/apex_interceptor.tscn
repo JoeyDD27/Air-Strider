@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ch3_apex_interceptor"]
+
+[ext_resource type="Script" path="res://scripts/enemies/ch3/apex_interceptor.gd" id="1_interceptor"]
+
+[node name="ApexInterceptor" type="Node2D"]
+script = ExtResource("1_interceptor")
+max_health = 20

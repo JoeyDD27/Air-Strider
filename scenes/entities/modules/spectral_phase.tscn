@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://spectral_phase_module"]
+
+[ext_resource type="Script" path="res://scripts/modules/spectral_phase.gd" id="1_spectral"]
+
+[node name="SpectralPhase" type="Node2D"]
+script = ExtResource("1_spectral")
+module_name = "Spectral Phase"
+module_description = "Phase through platforms. No grappling."
+module_color = Color(0.6, 0.2, 0.9, 1)

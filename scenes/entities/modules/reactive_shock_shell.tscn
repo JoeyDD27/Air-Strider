@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://reactive_shock_shell_module"]
+
+[ext_resource type="Script" path="res://scripts/modules/reactive_shock_shell.gd" id="1_shell"]
+
+[node name="ReactiveShockShell" type="Node2D"]
+script = ExtResource("1_shell")
+module_name = "Reactive Shock-Shell"
+module_description = "Damage releases enemy-killing shockwave"
+module_color = Color(0.6, 0.2, 1, 1)

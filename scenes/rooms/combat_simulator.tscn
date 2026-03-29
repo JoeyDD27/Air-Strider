@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://combat_simulator_room"]
+
+[ext_resource type="Script" path="res://scripts/world/combat_simulator.gd" id="1_sim"]
+
+[node name="CombatSimulator" type="Node2D"]
+script = ExtResource("1_sim")
+room_id = -1
+room_name = "Combat Simulator"
+has_floor_hazard = false
+floor_y = 700.0
+room_width = 1600.0
+room_height = 800.0
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(200, 600)

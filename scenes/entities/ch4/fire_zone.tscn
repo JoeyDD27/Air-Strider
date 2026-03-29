@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://ch4_fire_zone"]
+
+[ext_resource type="Script" path="res://scripts/hazards/fire_zone.gd" id="1_fire_zone"]
+
+[node name="FireZone" type="Area2D"]
+collision_layer = 32
+collision_mask = 1
+script = ExtResource("1_fire_zone")
+radius = 120.0
+duration = 10.0
+damage_per_tick = 1
+damage_interval = 0.5

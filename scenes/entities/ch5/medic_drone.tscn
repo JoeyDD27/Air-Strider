@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmedic_drone_ch5"]
+
+[ext_resource type="Script" path="res://scripts/enemies/ch5/medic_drone.gd" id="1_medic_drone"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_medic"]
+radius = 20.0
+
+[node name="MedicDrone" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 16
+script = ExtResource("1_medic_drone")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_medic")

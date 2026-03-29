@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://phoenix_plating_module"]
+
+[ext_resource type="Script" path="res://scripts/modules/phoenix_plating.gd" id="1_phoenix"]
+
+[node name="PhoenixPlating" type="Node2D"]
+script = ExtResource("1_phoenix")
+module_name = "Phoenix Plating"
+module_description = "Once per room, survive fatal hit with 1 HP"
+module_color = Color(1, 0.4, 0, 1)

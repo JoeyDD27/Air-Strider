@@ -1,0 +1,190 @@
+[gd_scene load_steps=4 format=3 uid="uid://oa1t7v33prd3"]
+
+[ext_resource type="Script" uid="uid://cibw342age6hj" path="res://scripts/ui/main_menu.gd" id="1_menu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button"]
+bg_color = Color(0.2, 0.4, 0.6, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.4, 0.7, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button_hover"]
+bg_color = Color(0.3, 0.5, 0.7, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.5, 0.8, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_menu")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.08, 0.08, 0.12, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_top = 120.0
+offset_right = 250.0
+offset_bottom = 180.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.3, 0.7, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "AIR STRIDER"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = 190.0
+offset_right = 150.0
+offset_bottom = 230.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.6, 0.6, 0.7, 1)
+theme_override_font_sizes/font_size = 20
+text = "Chapter 1: The Awakening"
+horizontal_alignment = 1
+
+[node name="ButtonContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 300.0
+offset_right = 100.0
+offset_bottom = 500.0
+grow_horizontal = 2
+theme_override_constants/separation = 15
+
+[node name="ContinueButton" type="Button" parent="ButtonContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_button")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+text = "CONTINUE"
+
+[node name="NewGameButton" type="Button" parent="ButtonContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_button")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+text = "NEW GAME"
+
+[node name="QuitButton" type="Button" parent="ButtonContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_button")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+text = "QUIT"
+
+[node name="DifficultyContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = 250.0
+offset_right = 150.0
+offset_bottom = 290.0
+grow_horizontal = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="DifficultyLeftBtn" type="Button" parent="DifficultyContainer"]
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "<"
+
+[node name="DifficultyLabel" type="Label" parent="DifficultyContainer"]
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.3, 1)
+theme_override_font_sizes/font_size = 24
+text = "PILOT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DifficultyRightBtn" type="Button" parent="DifficultyContainer"]
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = ">"
+
+[node name="DifficultyDesc" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 290.0
+offset_right = 200.0
+offset_bottom = 320.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 14
+text = "3 HP - Pits are lethal (Normal)"
+horizontal_alignment = 1
+
+[node name="Controls" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -200.0
+offset_right = 300.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.5, 0.5, 0.5, 1)
+theme_override_font_sizes/font_size = 14
+text = "CONTROLS:
+LEFT CLICK (Hold) - Charge & Shoot
+RIGHT CLICK - Grapple Hook
+E - Use Tool
+A/D or Arrow Keys - Move
+SPACE - Jump / Double Jump
+ESC - Pause"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="ButtonContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="ButtonContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="ButtonContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="DifficultyContainer/DifficultyLeftBtn" to="." method="_on_difficulty_left_pressed"]
+[connection signal="pressed" from="DifficultyContainer/DifficultyRightBtn" to="." method="_on_difficulty_right_pressed"]

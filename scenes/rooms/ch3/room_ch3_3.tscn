@@ -1,0 +1,83 @@
+[gd_scene load_steps=5 format=3 uid="uid://ch3_room3"]
+
+[ext_resource type="Script" path="res://scripts/world/room_base.gd" id="1_base"]
+[ext_resource type="PackedScene" uid="uid://dq9012platform" path="res://scenes/entities/platform.tscn" id="2_platform"]
+[ext_resource type="PackedScene" uid="uid://eq3456door" path="res://scenes/entities/door.tscn" id="3_door"]
+[ext_resource type="PackedScene" uid="uid://ch3_harpoon_stalker" path="res://scenes/entities/ch3/harpoon_stalker.tscn" id="4_stalker"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hint"]
+font_size = 18
+font_color = Color(0.8, 0.6, 0.6, 1)
+
+[node name="RoomCh3_3" type="Node2D"]
+script = ExtResource("1_base")
+room_id = 203
+room_name = "The Hook"
+has_floor_hazard = true
+floor_y = 900.0
+room_width = 1920.0
+room_height = 1000.0
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(150, 500)
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 2020.0
+offset_bottom = 1100.0
+color = Color(0.08, 0.05, 0.1, 1)
+
+[node name="Platform1" parent="." instance=ExtResource("2_platform")]
+position = Vector2(200, 550)
+platform_type = "stable"
+width = 200.0
+height = 30.0
+
+[node name="Platform2" parent="." instance=ExtResource("2_platform")]
+position = Vector2(500, 450)
+platform_type = "stable"
+width = 150.0
+height = 30.0
+
+[node name="Platform3" parent="." instance=ExtResource("2_platform")]
+position = Vector2(800, 400)
+platform_type = "stable"
+width = 150.0
+height = 30.0
+
+[node name="Platform4" parent="." instance=ExtResource("2_platform")]
+position = Vector2(1100, 450)
+platform_type = "stable"
+width = 150.0
+height = 30.0
+
+[node name="Platform5" parent="." instance=ExtResource("2_platform")]
+position = Vector2(1400, 500)
+platform_type = "stable"
+width = 150.0
+height = 30.0
+
+[node name="PlatformEnd" parent="." instance=ExtResource("2_platform")]
+position = Vector2(1700, 550)
+platform_type = "stable"
+width = 300.0
+height = 30.0
+
+[node name="HarpoonStalker" parent="." instance=ExtResource("4_stalker")]
+position = Vector2(960, 350)
+
+[node name="Door" parent="." instance=ExtResource("3_door")]
+position = Vector2(1800, 450)
+next_room_id = 204
+requires_clear = true
+
+[node name="Hint" type="Label" parent="."]
+offset_left = 100.0
+offset_top = 350.0
+offset_right = 450.0
+offset_bottom = 450.0
+text = "HARPOON-STALKER pulls you!
+Even invincibility won't stop
+the displacement. Don't fall!"
+label_settings = SubResource("LabelSettings_hint")

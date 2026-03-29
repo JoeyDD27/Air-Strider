@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://jq3456thruster"]
+
+[ext_resource type="Script" path="res://scripts/tools/vertical_thruster.gd" id="1_thruster"]
+
+[node name="VerticalThruster" type="Node2D"]
+script = ExtResource("1_thruster")

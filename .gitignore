@@ -1,0 +1,5 @@
+# Large binary files
+*.exe
+*.dmg
+*.zip
+*.mov

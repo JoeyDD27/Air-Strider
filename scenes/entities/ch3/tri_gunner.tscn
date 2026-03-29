@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch3_tri_gunner"]
+
+[ext_resource type="Script" path="res://scripts/enemies/ch3/tri_gunner.gd" id="1_tri_gunner"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gunner"]
+size = Vector2(50, 40)
+
+[node name="TriGunner" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 18
+script = ExtResource("1_tri_gunner")
+max_health = 4
+damage = 1
+reward = 35
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_gunner")

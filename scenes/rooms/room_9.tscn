@@ -1,0 +1,109 @@
+[gd_scene load_steps=7 format=3 uid="uid://room9scene"]
+
+[ext_resource type="Script" path="res://scripts/world/room_base.gd" id="1_base"]
+[ext_resource type="PackedScene" uid="uid://dq9012platform" path="res://scenes/entities/platform.tscn" id="2_platform"]
+[ext_resource type="PackedScene" uid="uid://eq3456door" path="res://scenes/entities/door.tscn" id="3_door"]
+[ext_resource type="PackedScene" uid="uid://fq7890sniper" path="res://scenes/entities/sniper.tscn" id="4_sniper"]
+[ext_resource type="PackedScene" uid="uid://iq9012mantis" path="res://scenes/entities/mantis.tscn" id="5_mantis"]
+[ext_resource type="PackedScene" uid="uid://gq1234mortar" path="res://scenes/entities/mortar.tscn" id="6_mortar"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_grapple"]
+size = Vector2(30, 30)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tutorial"]
+font_size = 20
+font_color = Color(1, 0.5, 0.3, 1)
+
+[node name="Room9" type="Node2D"]
+script = ExtResource("1_base")
+room_id = 9
+room_name = "Pre-Boss Arena"
+has_floor_hazard = false
+floor_y = 900.0
+room_width = 1400.0
+room_height = 1000.0
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(100, 750)
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 1500.0
+offset_bottom = 1100.0
+color = Color(0.12, 0.06, 0.08, 1)
+
+[node name="Platform1" parent="." instance=ExtResource("2_platform")]
+position = Vector2(100, 800)
+platform_type = "stable"
+width = 150.0
+
+[node name="Platform2" parent="." instance=ExtResource("2_platform")]
+position = Vector2(350, 650)
+platform_type = "stable"
+width = 120.0
+
+[node name="Platform3" parent="." instance=ExtResource("2_platform")]
+position = Vector2(700, 500)
+platform_type = "stable"
+width = 200.0
+
+[node name="Platform4" parent="." instance=ExtResource("2_platform")]
+position = Vector2(1050, 650)
+platform_type = "stable"
+width = 120.0
+
+[node name="Platform5" parent="." instance=ExtResource("2_platform")]
+position = Vector2(1300, 800)
+platform_type = "stable"
+width = 150.0
+
+[node name="GrapplePoint1" type="StaticBody2D" parent="."]
+position = Vector2(250, 400)
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrapplePoint1"]
+shape = SubResource("RectangleShape2D_grapple")
+
+[node name="GrapplePoint2" type="StaticBody2D" parent="."]
+position = Vector2(700, 250)
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrapplePoint2"]
+shape = SubResource("RectangleShape2D_grapple")
+
+[node name="GrapplePoint3" type="StaticBody2D" parent="."]
+position = Vector2(1150, 400)
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrapplePoint3"]
+shape = SubResource("RectangleShape2D_grapple")
+
+[node name="Sniper1" parent="." instance=ExtResource("4_sniper")]
+position = Vector2(350, 620)
+
+[node name="Sniper2" parent="." instance=ExtResource("4_sniper")]
+position = Vector2(1050, 620)
+
+[node name="Mortar1" parent="." instance=ExtResource("6_mortar")]
+position = Vector2(700, 470)
+
+[node name="Mantis1" parent="." instance=ExtResource("5_mantis")]
+position = Vector2(500, 870)
+
+[node name="Mantis2" parent="." instance=ExtResource("5_mantis")]
+position = Vector2(900, 870)
+
+[node name="Door" parent="." instance=ExtResource("3_door")]
+position = Vector2(1350, 750)
+next_room_id = 10
+
+[node name="TutorialLabel" type="Label" parent="."]
+offset_left = 500.0
+offset_top = 100.0
+offset_right = 900.0
+offset_bottom = 180.0
+text = "PRE-BOSS ARENA
+Defeat all enemies to proceed!"
+label_settings = SubResource("LabelSettings_tutorial")
+horizontal_alignment = 1

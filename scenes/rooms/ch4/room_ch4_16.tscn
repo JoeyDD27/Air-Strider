@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://ch4_room16"]
+
+[ext_resource type="Script" path="res://scripts/world/room_base.gd" id="1_base"]
+[ext_resource type="PackedScene" uid="uid://dq9012platform" path="res://scenes/entities/platform.tscn" id="2_platform"]
+[ext_resource type="PackedScene" uid="uid://eq3456door" path="res://scenes/entities/door.tscn" id="3_door"]
+[ext_resource type="PackedScene" uid="uid://ch4_sludge_mortar" path="res://scenes/entities/ch4/sludge_mortar.tscn" id="4_sludgemortar"]
+[ext_resource type="PackedScene" uid="uid://ch4_fuel_tank" path="res://scenes/entities/ch4/fuel_tank.tscn" id="5_fueltank"]
+[ext_resource type="PackedScene" uid="uid://ch4_tether_anchor" path="res://scenes/entities/ch4/tether_anchor.tscn" id="6_tetheranchor"]
+[ext_resource type="PackedScene" uid="uid://ch4_countdown" path="res://scenes/entities/ch4/countdown.tscn" id="7_countdown"]
+
+[node name="RoomCh4_16" type="Node2D"]
+script = ExtResource("1_base")
+room_id = 316
+room_name = "Mortar Nest"
+has_floor_hazard = true
+floor_y = 900.0
+room_width = 1920.0
+room_height = 1000.0
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(150, 700)
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 2020.0
+offset_bottom = 1100.0
+color = Color(0.1, 0.05, 0.02, 1)
+
+[node name="Platform1" parent="." instance=ExtResource("2_platform")]
+position = Vector2(350, 800)
+platform_type = "stable"
+width = 450.0
+height = 30.0
+
+[node name="Platform2" parent="." instance=ExtResource("2_platform")]
+position = Vector2(750, 600)
+platform_type = "stable"
+width = 300.0
+height = 30.0
+
+[node name="Platform3" parent="." instance=ExtResource("2_platform")]
+position = Vector2(1200, 500)
+platform_type = "stable"
+width = 350.0
+height = 30.0
+
+[node name="Platform4" parent="." instance=ExtResource("2_platform")]
+position = Vector2(1600, 800)
+platform_type = "stable"
+width = 450.0
+height = 30.0
+
+[node name="SludgeMortar1" parent="." instance=ExtResource("4_sludgemortar")]
+position = Vector2(400, 750)
+
+[node name="SludgeMortar2" parent="." instance=ExtResource("4_sludgemortar")]
+position = Vector2(750, 550)
+
+[node name="SludgeMortar3" parent="." instance=ExtResource("4_sludgemortar")]
+position = Vector2(1200, 450)
+
+[node name="FuelTank1" parent="." instance=ExtResource("5_fueltank")]
+position = Vector2(950, 400)
+
+[node name="FuelTank2" parent="." instance=ExtResource("5_fueltank")]
+position = Vector2(1450, 400)
+
+[node name="TetherAnchor1" parent="." instance=ExtResource("6_tetheranchor")]
+position = Vector2(1000, 500)
+
+[node name="Countdown1" parent="." instance=ExtResource("7_countdown")]
+position = Vector2(1550, 750)
+
+[node name="Door" parent="." instance=ExtResource("3_door")]
+position = Vector2(1750, 700)
+next_room_id = 317
+requires_clear = true

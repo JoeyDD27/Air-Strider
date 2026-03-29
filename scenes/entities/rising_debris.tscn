@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://nq9012debris"]
+
+[ext_resource type="Script" path="res://scripts/world/rising_debris.gd" id="1_debris"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_debris"]
+size = Vector2(100, 30)
+
+[node name="RisingDebris" type="StaticBody2D"]
+collision_layer = 66
+collision_mask = 0
+script = ExtResource("1_debris")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_debris")
